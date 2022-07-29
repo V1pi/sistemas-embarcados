@@ -1,0 +1,184 @@
+$comment
+	File created using the following command:
+		vcd file ci74138.msim.vcd -direction
+$end
+$date
+	Fri Jul 29 11:23:57 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module Project_vlg_vec_tst $end
+$var reg 1 ! A $end
+$var reg 1 " B $end
+$var reg 1 # C $end
+$var reg 1 $ G1 $end
+$var reg 1 % G2A $end
+$var reg 1 & G2B $end
+$var wire 1 ' OUT $end
+$var wire 1 ( OUT1 $end
+$var wire 1 ) OUT2 $end
+$var wire 1 * OUT3 $end
+$var wire 1 + OUT4 $end
+$var wire 1 , OUT5 $end
+$var wire 1 - OUT6 $end
+$var wire 1 . OUT7 $end
+
+$scope module i1 $end
+$var wire 1 / gnd $end
+$var wire 1 0 vcc $end
+$var wire 1 1 unknown $end
+$var tri1 1 2 devclrn $end
+$var tri1 1 3 devpor $end
+$var tri1 1 4 devoe $end
+$var wire 1 5 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 6 A~input_o $end
+$var wire 1 7 G2A~input_o $end
+$var wire 1 8 B~input_o $end
+$var wire 1 9 G1~input_o $end
+$var wire 1 : C~input_o $end
+$var wire 1 ; G2B~input_o $end
+$var wire 1 < inst6~combout $end
+$var wire 1 = inst7~combout $end
+$var wire 1 > inst8~combout $end
+$var wire 1 ? inst9~combout $end
+$var wire 1 @ inst10~combout $end
+$var wire 1 A inst11~combout $end
+$var wire 1 B inst12~combout $end
+$var wire 1 C inst13~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+x"
+x#
+x$
+1%
+1&
+1'
+1(
+1)
+1*
+1+
+1,
+1-
+1.
+0/
+10
+x1
+12
+13
+14
+05
+x6
+17
+x8
+x9
+x:
+1;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+$end
+#20000
+0$
+x%
+x&
+09
+x7
+x;
+#40000
+0!
+0"
+0#
+1$
+0%
+0&
+06
+08
+0:
+19
+07
+0;
+1<
+0'
+#60000
+1!
+16
+1=
+0<
+1'
+0(
+#80000
+1"
+0!
+18
+06
+1>
+0=
+1(
+0)
+#100000
+1!
+16
+1?
+0>
+1)
+0*
+#120000
+1#
+0"
+0!
+1:
+08
+06
+1@
+0?
+1*
+0+
+#140000
+1!
+16
+1A
+0@
+1+
+0,
+#160000
+1"
+0!
+18
+06
+1B
+0A
+1,
+0-
+#180000
+1!
+16
+1C
+0B
+1-
+0.
+#200000
+0$
+0#
+0"
+0!
+09
+0:
+08
+06
+0C
+1.
+#1000000

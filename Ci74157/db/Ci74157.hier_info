@@ -1,0 +1,19 @@
+|Ci74157
+Zd <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+S => inst5.IN0
+S => inst4.IN0
+E => inst5.IN1
+E => inst.IN1
+i0d => inst9.IN1
+i1d => inst2.IN1
+Zc <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+i0c => inst11.IN1
+i1c => inst10.IN1
+Zb <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+i0b => inst13.IN1
+i1b => inst12.IN1
+Za <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+i0a => inst15.IN1
+i1a => inst14.IN1
+
+
