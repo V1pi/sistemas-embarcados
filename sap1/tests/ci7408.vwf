@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/tests/ci7408.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/ci7408.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/tests/Waveform.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/ci7408.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/" sap1 -c sap1</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/" sap1 -c sap1</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="C:/Users/marlo/Desktop/Proj Sap1/sap1/tests/ci7408.vwf" --testbench_file="C:/Users/marlo/Desktop/Proj Sap1/sap1/simulation/qsim/ci7408.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="C:/Users/marlo/Desktop/Proj Sap1/sap1/tests/ci7408.vwf" --testbench_file="C:/Users/marlo/Desktop/Proj Sap1/sap1/simulation/qsim/ci7408.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/marlo/Desktop/Proj Sap1/sap1/simulation/qsim/" sap1 -c sap1</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/marlo/Desktop/Proj Sap1/sap1/simulation/qsim/" sap1 -c sap1</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work sap1.vo
@@ -20,7 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
