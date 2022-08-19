@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2022  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 504 -112 520 56)
 	(text "INPUT" (rect 6 125 16 153)(font "Arial" (font_size 6))(vertical))
-	(text "D0" (rect 7 5 19 20)(font "Arial" )(vertical))
+	(text "D0" (rect 7 5 19 19)(font "Arial" )(vertical))
 	(pt 8 168)
 	(drawing
 		(line (pt 4 84)(pt 4 109))
@@ -137,7 +137,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 664 -112 680 56)
 	(text "INPUT" (rect 6 125 16 153)(font "Arial" (font_size 6))(vertical))
-	(text "D1" (rect 4 5 21 18)(font "Intel Clear" )(vertical))
+	(text "D1" (rect 4 5 21 17)(font "Intel Clear" )(vertical))
 	(pt 8 168)
 	(drawing
 		(line (pt 4 84)(pt 4 109))
@@ -154,7 +154,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 824 -112 840 56)
 	(text "INPUT" (rect 6 125 16 153)(font "Arial" (font_size 6))(vertical))
-	(text "D2" (rect 4 5 21 18)(font "Intel Clear" )(vertical))
+	(text "D2" (rect 4 5 21 17)(font "Intel Clear" )(vertical))
 	(pt 8 168)
 	(drawing
 		(line (pt 4 84)(pt 4 109))
@@ -171,7 +171,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 984 -112 1000 56)
 	(text "INPUT" (rect 6 125 16 153)(font "Arial" (font_size 6))(vertical))
-	(text "D3" (rect 4 5 21 18)(font "Intel Clear" )(vertical))
+	(text "D3" (rect 4 5 21 17)(font "Intel Clear" )(vertical))
 	(pt 8 168)
 	(drawing
 		(line (pt 4 84)(pt 4 109))
@@ -1431,28 +1431,12 @@ https://fpgasoftware.intel.com/eula.
 	(pt 576 136)
 )
 (connector
-	(pt 424 136)
-	(pt 576 136)
-)
-(connector
 	(pt 736 168)
-	(pt 736 136)
-)
-(connector
-	(pt 576 136)
 	(pt 736 136)
 )
 (connector
 	(pt 896 168)
 	(pt 896 136)
-)
-(connector
-	(pt 736 136)
-	(pt 896 136)
-)
-(connector
-	(pt 896 136)
-	(pt 1056 136)
 )
 (connector
 	(pt 528 168)
@@ -1773,6 +1757,22 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1032 664)
 	(pt 1032 760)
+)
+(connector
+	(pt 424 136)
+	(pt 576 136)
+)
+(connector
+	(pt 576 136)
+	(pt 736 136)
+)
+(connector
+	(pt 736 136)
+	(pt 896 136)
+)
+(connector
+	(pt 896 136)
+	(pt 1056 136)
 )
 (junction (pt 360 96))
 (junction (pt 576 136))
