@@ -59,6 +59,8 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 set_global_assignment -name EDA_MAP_ILLEGAL_CHARACTERS ON -section_id eda_simulation
+set_global_assignment -name BDF_FILE src/ram.bdf
+set_global_assignment -name BDF_FILE src/ci74189.bdf
 set_global_assignment -name BDF_FILE src/ci74173.bdf
 set_global_assignment -name BDF_FILE src/ci74161.bdf
 set_global_assignment -name BDF_FILE src/ci74157.bdf
