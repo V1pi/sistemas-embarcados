@@ -111,15 +111,15 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 120 64)
 		(output)
-		(text "n_S1" (rect 0 0 29 15)(font "Intel Clear" (font_size 8)))
-		(text "n_S1" (rect 70 59 99 74)(font "Intel Clear" (font_size 8)))
+		(text "n_S3" (rect 0 0 29 15)(font "Intel Clear" (font_size 8)))
+		(text "n_S3" (rect 70 59 99 74)(font "Intel Clear" (font_size 8)))
 		(line (pt 120 64)(pt 104 64))
 	)
 	(port
 		(pt 120 80)
 		(output)
-		(text "n_S3" (rect 0 0 29 15)(font "Intel Clear" (font_size 8)))
-		(text "n_S3" (rect 70 75 99 90)(font "Intel Clear" (font_size 8)))
+		(text "n_S1" (rect 0 0 29 15)(font "Intel Clear" (font_size 8)))
+		(text "n_S1" (rect 70 75 99 90)(font "Intel Clear" (font_size 8)))
 		(line (pt 120 80)(pt 104 80))
 	)
 	(drawing
