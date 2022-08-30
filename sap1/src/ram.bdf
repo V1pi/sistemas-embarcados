@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 776 312 824 344)
+	(rect 792 312 840 344)
 	(text "TRI" (rect 1 0 16 10)(font "Arial" (font_size 6)))
 	(text "inst17" (rect 3 21 34 34)(font "Intel Clear" ))
 	(port
@@ -370,40 +370,8 @@ https://fpgasoftware.intel.com/eula.
 	(pt 664 224)
 )
 (connector
-	(pt 800 312)
-	(pt 800 288)
-)
-(connector
-	(pt 584 288)
-	(pt 800 288)
-)
-(connector
-	(pt 776 328)
-	(pt 736 328)
-)
-(connector
-	(pt 824 328)
-	(pt 912 328)
-)
-(connector
-	(pt 912 328)
-	(pt 912 216)
-)
-(connector
-	(pt 824 216)
-	(pt 912 216)
-)
-(connector
-	(pt 912 216)
-	(pt 960 216)
-)
-(connector
 	(pt 864 288)
 	(pt 864 256)
-)
-(connector
-	(pt 800 288)
-	(pt 864 288)
 )
 (connector
 	(pt 864 288)
@@ -441,9 +409,41 @@ https://fpgasoftware.intel.com/eula.
 	(pt 576 352)
 	(pt 648 352)
 )
+(connector
+	(pt 816 288)
+	(pt 816 312)
+)
+(connector
+	(pt 912 328)
+	(pt 840 328)
+)
+(connector
+	(pt 912 216)
+	(pt 912 328)
+)
+(connector
+	(pt 584 288)
+	(pt 816 288)
+)
+(connector
+	(pt 816 288)
+	(pt 864 288)
+)
+(connector
+	(pt 824 216)
+	(pt 912 216)
+)
+(connector
+	(pt 912 216)
+	(pt 960 216)
+)
+(connector
+	(pt 736 328)
+	(pt 792 328)
+)
 (junction (pt 1048 224))
 (junction (pt 584 288))
 (junction (pt 576 352))
-(junction (pt 800 288))
 (junction (pt 864 288))
 (junction (pt 912 216))
+(junction (pt 816 288))
