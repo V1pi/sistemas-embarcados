@@ -21,12 +21,14 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work sap1.vo
 vlog -work work Waveform2.vwf.vt
-vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ci74189_vlg_vec_tst
+vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ci74189_vlg_vec_tst
 vcd file -direction sap1.msim.vcd
 vcd add -internal ci74189_vlg_vec_tst/*
 vcd add -internal ci74189_vlg_vec_tst/i1/*
@@ -39,6 +41,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -218,34 +222,14 @@ SIGNAL("n_WE")
 	PARENT = "";
 }
 
-SIGNAL("CELULA1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("CELULA2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
 TRANSITION_LIST("A0")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 80.0;
+		LEVEL 0 FOR 90.0;
 		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 840.0;
+		LEVEL 0 FOR 830.0;
 	}
 }
 
@@ -281,8 +265,9 @@ TRANSITION_LIST("D0")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 990.0;
+		LEVEL 0 FOR 980.0;
 	}
 }
 
@@ -291,7 +276,9 @@ TRANSITION_LIST("D1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 890.0;
 	}
 }
 
@@ -318,9 +305,11 @@ TRANSITION_LIST("n_CS")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 920.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 70.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -365,29 +354,13 @@ TRANSITION_LIST("n_WE")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
+		LEVEL 0 FOR 20.0;
 		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 840.0;
-	}
-}
-
-TRANSITION_LIST("CELULA1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("CELULA2")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 770.0;
 	}
 }
 
@@ -514,24 +487,6 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "CELULA1";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 14;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "CELULA2";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 15;
 	TREE_LEVEL = 0;
 }
 
