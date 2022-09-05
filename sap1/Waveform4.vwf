@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/Waveform.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/Waveform.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/Waveform4.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/Waveform4.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off sap1 -c sap1 --vector_source="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/Waveform4.vwf" --testbench_file="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/Waveform4.vwf.vt"</ttestbench_cmd>
 <fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/" sap1 -c sap1</fnetlist_cmd>
 <tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/v1pi/Documents/Workspaces/Faculdade/sistemas-embarcados/sap1/simulation/qsim/" sap1 -c sap1</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work sap1.vo
-vlog -work work Waveform.vwf.vt
-vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SomadorSubtrator_vlg_vec_tst
+vlog -work work Waveform4.vwf.vt
+vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Acumulador_vlg_vec_tst
 vcd file -direction sap1.msim.vcd
-vcd add -internal SomadorSubtrator_vlg_vec_tst/*
-vcd add -internal SomadorSubtrator_vlg_vec_tst/i1/*
+vcd add -internal Acumulador_vlg_vec_tst/*
+vcd add -internal Acumulador_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,17 +20,16 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work sap1.vo
-vlog -work work Waveform.vwf.vt
-vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SomadorSubtrator_vlg_vec_tst
+vlog -work work Waveform4.vwf.vt
+vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Acumulador_vlg_vec_tst
 vcd file -direction sap1.msim.vcd
-vcd add -internal SomadorSubtrator_vlg_vec_tst/*
-vcd add -internal SomadorSubtrator_vlg_vec_tst/i1/*
+vcd add -internal Acumulador_vlg_vec_tst/*
+vcd add -internal Acumulador_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -40,7 +39,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -80,7 +78,7 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("A0")
+SIGNAL("CLK")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -90,7 +88,7 @@ SIGNAL("A0")
 	PARENT = "";
 }
 
-SIGNAL("A1")
+SIGNAL("D0")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -100,7 +98,7 @@ SIGNAL("A1")
 	PARENT = "";
 }
 
-SIGNAL("A2")
+SIGNAL("D1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -110,7 +108,7 @@ SIGNAL("A2")
 	PARENT = "";
 }
 
-SIGNAL("A3")
+SIGNAL("D2")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -120,7 +118,7 @@ SIGNAL("A3")
 	PARENT = "";
 }
 
-SIGNAL("A4")
+SIGNAL("D3")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -130,7 +128,7 @@ SIGNAL("A4")
 	PARENT = "";
 }
 
-SIGNAL("A5")
+SIGNAL("D4")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -140,7 +138,7 @@ SIGNAL("A5")
 	PARENT = "";
 }
 
-SIGNAL("A6")
+SIGNAL("D5")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -150,7 +148,7 @@ SIGNAL("A6")
 	PARENT = "";
 }
 
-SIGNAL("A7")
+SIGNAL("D6")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -160,7 +158,37 @@ SIGNAL("A7")
 	PARENT = "";
 }
 
-SIGNAL("CO")
+SIGNAL("D7")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("Ea")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("La")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("Q0")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -170,93 +198,83 @@ SIGNAL("CO")
 	PARENT = "";
 }
 
-SIGNAL("Eu")
+SIGNAL("Q1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN0")
+SIGNAL("Q2")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN1")
+SIGNAL("Q3")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN2")
+SIGNAL("Q4")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN3")
+SIGNAL("Q5")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN4")
+SIGNAL("Q6")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN5")
+SIGNAL("Q7")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("IN6")
+SIGNAL("S0")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("IN7")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
@@ -330,81 +348,81 @@ SIGNAL("S7")
 	PARENT = "";
 }
 
-SIGNAL("S0")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("SUB")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-TRANSITION_LIST("A0")
+TRANSITION_LIST("CLK")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
+		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
+		LEVEL 0 FOR 160.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 910.0;
+		LEVEL 0 FOR 700.0;
 	}
 }
 
-TRANSITION_LIST("A1")
+TRANSITION_LIST("D0")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 970.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 700.0;
 	}
 }
 
-TRANSITION_LIST("A2")
+TRANSITION_LIST("D1")
 {
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 290.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 970.0;
+		LEVEL 0 FOR 700.0;
 	}
 }
 
-TRANSITION_LIST("A3")
+TRANSITION_LIST("D2")
 {
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 290.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 970.0;
+		LEVEL 0 FOR 700.0;
 	}
 }
 
-TRANSITION_LIST("A4")
+TRANSITION_LIST("D3")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 700.0;
+	}
+}
+
+TRANSITION_LIST("D4")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 290.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 700.0;
+	}
+}
+
+TRANSITION_LIST("D5")
 {
 	NODE
 	{
@@ -413,7 +431,7 @@ TRANSITION_LIST("A4")
 	}
 }
 
-TRANSITION_LIST("A5")
+TRANSITION_LIST("D6")
 {
 	NODE
 	{
@@ -422,25 +440,42 @@ TRANSITION_LIST("A5")
 	}
 }
 
-TRANSITION_LIST("A6")
+TRANSITION_LIST("D7")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 980.0;
 	}
 }
 
-TRANSITION_LIST("A7")
+TRANSITION_LIST("Ea")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 780.0;
 	}
 }
 
-TRANSITION_LIST("CO")
+TRANSITION_LIST("La")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 290.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 700.0;
+	}
+}
+
+TRANSITION_LIST("Q0")
 {
 	NODE
 	{
@@ -449,106 +484,75 @@ TRANSITION_LIST("CO")
 	}
 }
 
-TRANSITION_LIST("Eu")
+TRANSITION_LIST("Q1")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 900.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN0")
+TRANSITION_LIST("Q2")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 950.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN1")
+TRANSITION_LIST("Q3")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 950.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN2")
+TRANSITION_LIST("Q4")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 910.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN3")
+TRANSITION_LIST("Q5")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 950.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN4")
+TRANSITION_LIST("Q6")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN5")
+TRANSITION_LIST("Q7")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("IN6")
+TRANSITION_LIST("S0")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
-	}
-}
-
-TRANSITION_LIST("IN7")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -615,31 +619,9 @@ TRANSITION_LIST("S7")
 	}
 }
 
-TRANSITION_LIST("S0")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("SUB")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 910.0;
-	}
-}
-
 DISPLAY_LINE
 {
-	CHANNEL = "A0";
+	CHANNEL = "CLK";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -648,7 +630,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A1";
+	CHANNEL = "D0";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -657,7 +639,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A2";
+	CHANNEL = "D1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -666,7 +648,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A3";
+	CHANNEL = "D2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -675,7 +657,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A4";
+	CHANNEL = "D3";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
@@ -684,7 +666,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A5";
+	CHANNEL = "D4";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
@@ -693,7 +675,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A6";
+	CHANNEL = "D5";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
@@ -702,7 +684,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "A7";
+	CHANNEL = "D6";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
@@ -711,7 +693,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN0";
+	CHANNEL = "D7";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
@@ -720,7 +702,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN1";
+	CHANNEL = "Ea";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
@@ -729,7 +711,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN2";
+	CHANNEL = "La";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;
@@ -738,7 +720,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN3";
+	CHANNEL = "Q0";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 11;
@@ -747,7 +729,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN4";
+	CHANNEL = "Q1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
@@ -756,7 +738,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN5";
+	CHANNEL = "Q2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -765,7 +747,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN6";
+	CHANNEL = "Q3";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
@@ -774,7 +756,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "IN7";
+	CHANNEL = "Q4";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 15;
@@ -783,7 +765,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SUB";
+	CHANNEL = "Q5";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 16;
@@ -792,7 +774,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Eu";
+	CHANNEL = "Q6";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 17;
@@ -801,7 +783,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S0";
+	CHANNEL = "Q7";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 18;
@@ -810,7 +792,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S1";
+	CHANNEL = "S0";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 19;
@@ -819,7 +801,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S2";
+	CHANNEL = "S1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 20;
@@ -828,7 +810,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S3";
+	CHANNEL = "S2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 21;
@@ -837,7 +819,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S4";
+	CHANNEL = "S3";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 22;
@@ -846,7 +828,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S5";
+	CHANNEL = "S4";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 23;
@@ -855,7 +837,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S6";
+	CHANNEL = "S5";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 24;
@@ -864,7 +846,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S7";
+	CHANNEL = "S6";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 25;
@@ -873,7 +855,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CO";
+	CHANNEL = "S7";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 26;
