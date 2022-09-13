@@ -7,10 +7,10 @@
 vlib work
 vlog -work work sap1.vo
 vlog -work work Waveform8.vwf.vt
-vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SomadorSubtrator_vlg_vec_tst
+vsim -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ci74157_vlg_vec_tst
 vcd file -direction sap1.msim.vcd
-vcd add -internal SomadorSubtrator_vlg_vec_tst/*
-vcd add -internal SomadorSubtrator_vlg_vec_tst/i1/*
+vcd add -internal ci74157_vlg_vec_tst/*
+vcd add -internal ci74157_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,16 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work sap1.vo
 vlog -work work Waveform8.vwf.vt
-vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SomadorSubtrator_vlg_vec_tst
+vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ci74157_vlg_vec_tst
 vcd file -direction sap1.msim.vcd
-vcd add -internal SomadorSubtrator_vlg_vec_tst/*
-vcd add -internal SomadorSubtrator_vlg_vec_tst/i1/*
+vcd add -internal ci74157_vlg_vec_tst/*
+vcd add -internal ci74157_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -223,7 +221,9 @@ TRANSITION_LIST("E")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 180.0;
+		LEVEL 0 FOR 670.0;
 	}
 }
 
@@ -232,7 +232,8 @@ TRANSITION_LIST("i0a")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 850.0;
 	}
 }
 
@@ -241,8 +242,7 @@ TRANSITION_LIST("i0b")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 120.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -251,8 +251,8 @@ TRANSITION_LIST("i0c")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 120.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 850.0;
 	}
 }
 
@@ -261,8 +261,7 @@ TRANSITION_LIST("i0d")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 120.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -280,8 +279,8 @@ TRANSITION_LIST("i1b")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 120.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 850.0;
 	}
 }
 
@@ -299,7 +298,8 @@ TRANSITION_LIST("i1d")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 850.0;
 	}
 }
 
@@ -309,8 +309,8 @@ TRANSITION_LIST("S")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 1 FOR 90.0;
+		LEVEL 0 FOR 850.0;
 	}
 }
 
