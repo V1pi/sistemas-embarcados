@@ -22,7 +22,7 @@ https://fpgasoftware.intel.com/eula.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 136 144)
-	(text "Contador de Programas" (rect 5 0 145 19)(font "Intel Clear" (font_size 8)))
+	(text "ContadordeProgramas" (rect 5 0 138 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 107 24 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
