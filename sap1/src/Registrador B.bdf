@@ -673,26 +673,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 992 112)
 )
 (connector
-	(pt 992 112)
-	(pt 992 160)
-)
-(connector
-	(pt 992 160)
-	(pt 992 176)
-)
-(connector
-	(pt 992 176)
-	(pt 992 192)
-)
-(connector
-	(pt 992 192)
-	(pt 992 208)
-)
-(connector
-	(pt 992 208)
-	(pt 992 224)
-)
-(connector
 	(pt 992 224)
 	(pt 992 240)
 )
@@ -707,38 +687,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 976 304)
 	(pt 976 328)
-)
-(connector
-	(pt 968 160)
-	(pt 992 160)
-)
-(connector
-	(pt 992 160)
-	(pt 1048 160)
-)
-(connector
-	(pt 968 176)
-	(pt 992 176)
-)
-(connector
-	(pt 992 176)
-	(pt 1048 176)
-)
-(connector
-	(pt 968 192)
-	(pt 992 192)
-)
-(connector
-	(pt 992 192)
-	(pt 1048 192)
-)
-(connector
-	(pt 968 208)
-	(pt 992 208)
-)
-(connector
-	(pt 992 208)
-	(pt 1048 208)
 )
 (connector
 	(pt 1000 384)
@@ -764,15 +712,31 @@ https://fpgasoftware.intel.com/eula.
 	(pt 400 208)
 	(pt 432 208)
 )
+(connector
+	(pt 968 160)
+	(pt 1048 160)
+)
+(connector
+	(pt 968 176)
+	(pt 1048 176)
+)
+(connector
+	(pt 968 192)
+	(pt 1048 192)
+)
+(connector
+	(pt 992 112)
+	(pt 992 224)
+)
+(connector
+	(pt 968 208)
+	(pt 1048 208)
+)
 (junction (pt 192 288))
 (junction (pt 192 304))
 (junction (pt 240 224))
 (junction (pt 1000 384))
 (junction (pt 992 224))
 (junction (pt 992 112))
-(junction (pt 992 160))
-(junction (pt 992 176))
-(junction (pt 992 192))
-(junction (pt 992 208))
 (junction (pt 976 288))
 (junction (pt 976 304))
