@@ -26,5 +26,6 @@ module celula_ram (
       else tempQ <= tempSel;
     end;
   end
+
   assign q = sel ? tempQ : 1'bZ;
 endmodule 
