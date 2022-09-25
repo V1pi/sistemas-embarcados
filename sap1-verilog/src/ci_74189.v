@@ -1,5 +1,3 @@
-// ci74189 - use multiples celula_ram one for each line. Use A inputs to know
-// which line is active. D values should be written to the line selected.
 module ci74189(
   input [3:0] a,
   input [3:0] d,
