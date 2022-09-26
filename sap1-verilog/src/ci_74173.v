@@ -17,7 +17,7 @@ module ci74173 (
   always @(posedge clk or posedge rst)
     if (rst)
       q_reg <= 4'b0;
-    else if (n_IE)
+    else if (~n_IE)
       q_reg <= d;
 
   assign q = e_saida ? q_reg : 4'bZ;
