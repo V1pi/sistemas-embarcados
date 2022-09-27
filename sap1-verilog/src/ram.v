@@ -4,7 +4,7 @@ module ram (
   input [3:0] a,
   input n_ce,
   input ch_s4,
-  output [7:0] s 
+  output [7:0] s
 );
   ci74189 c1 (
     .a(a),

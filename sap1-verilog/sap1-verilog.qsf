@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M40DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY ram
+set_global_assignment -name TOP_LEVEL_ENTITY sap1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:35:58  SEPTEMBER 05, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -56,6 +56,7 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE src/acumulador.v
 set_global_assignment -name VERILOG_FILE src/ram.v
 set_global_assignment -name VERILOG_FILE src/sap1.v
 set_global_assignment -name VERILOG_FILE src/registrador_instrucoes.v
@@ -82,6 +83,8 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform8.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform9.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform10.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform11.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform12.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform13.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
