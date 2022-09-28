@@ -3,7 +3,8 @@ module ci74189(
   input [3:0] d,
   input n_we,
   input n_ce,
-  output [3:0] q
+  output [3:0] q,
+  output [3:0] temp
 );
   
   wire [63:0] celulas [15:0][3:0];
@@ -37,5 +38,6 @@ module ci74189(
     q_aux[2] <= celulas[select_line][2];
     q_aux[3] <= celulas[select_line][3];
   end
+  assign temp = q_aux;
   assign q = !n_ce && n_we ? q_aux : 4'bZ;
 endmodule 
